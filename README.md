@@ -143,5 +143,42 @@ whoami@ubuntu1$
 Next step is to get the console access url for the above mentioned node
 
 ```
+curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl/nodes
+HTTP/1.1 200 OK
+Date: Tue, 12 Feb 2019 06:39:03 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: Unified Networking Lab API
+Cache-Control: post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 461
+Content-Type: application/json
+
+{
+    "code": 200,
+    "data": {
+        "1": {
+            "config": 0,
+            "config_list": [],
+            "console": "telnet",
+            "delay": 0,
+            "ethernet": 2,
+            "icon": "Router.png",
+            "id": 1,
+            "image": "L3-ADVENTERPRISE9-15.4.2T.bin",
+            "left": 358,
+            "name": "Node1",
+            "nvram": 1024,
+            "ram": 256,
+            "serial": 0,
+            "status": 2,
+            "template": "iol",
+            "top": 192,
+            "type": "iol",
+            "url": "/html5/#/client/MzI3NjkAYwBteXNxbA==?token=B7E3D1733CCBE3640DF29B5CD6CD668A91442433158875B9A851DD176159AF3B"
+        }
+    },
+    "message": "Successfully listed nodes (60026).",
+    "status": "success"
+}
 
 ```

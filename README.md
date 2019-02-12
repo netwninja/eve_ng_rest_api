@@ -6,7 +6,7 @@ For this DEMO we are using EVE_NG server running on ESXI6.5 and it's reachable v
 
 
 **EVE_NG login or authentication**
-===================================
+----------------------------------
 
 ```
 curljson -i -s -b /tmp/cookie -c /tmp/cookie -X POST -d '{"username":"admin","password":"eve"}' http://10.0.0.221/api/auth/login
@@ -29,7 +29,7 @@ Content-Type: application/json
 ```
 
 **CREATE A LAB**
-================
+---------------
 
 ```
 curljson -i -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"path":"/CCIE","name":"Gasood","version":"1","author":"User1","description":"A new demo lab","body":"Lab usage and guide"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs
@@ -112,5 +112,36 @@ Content-Type: application/json
     "status": "success"
 }
 
+
+```
+
+**Start the node**
+-------------------
+
+
+```
+curljson -i  -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl/nodes/start
+HTTP/1.1 200 OK
+Date: Tue, 12 Feb 2019 06:25:50 GMT
+Server: Apache/2.4.18 (Ubuntu)
+X-Powered-By: Unified Networking Lab API
+Cache-Control: post-check=0, pre-check=0
+Pragma: no-cache
+Content-Length: 66
+Content-Type: application/json
+
+{
+    "code": 200,
+    "message": "Nodes started (80048).",
+    "status": "success"
+}
+whoami@ubuntu1$
+
+
+```
+
+Next step is to get the console access url for the above mentioned node
+
+```
 
 ```

@@ -53,7 +53,6 @@ Content-Type: application/json
 
 Now next step is going to create a node inside this LAB. In order to create the nodes we would need the LAB uuid.
 
-L3-ADVENTERPRISE9-15.4.2T.bin
 ```
 curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl
 HTTP/1.1 200 OK
@@ -86,10 +85,10 @@ Content-Type: application/json
 
 once we have the UUID then go ahead and use the curl command mentioned below.  This node has following attributes
 
-type: iol
-image used: L3-ADVENTERPRISE9-15.4.2T.bin
-cpu: 1
-ethernet modules: 2
+* type: iol
+* image used: L3-ADVENTERPRISE9-15.4.2T.bin
+* cpu: 1
+* ethernet modules: 2
 
 
 

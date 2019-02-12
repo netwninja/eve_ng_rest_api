@@ -33,21 +33,20 @@ Content-Type: application/json
 
 ```
 curljson -i -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"path":"/CCIE","name":"Gasood","version":"1","author":"User1","description":"A new demo lab","body":"Lab usage and guide"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs
-HTTP/1.1 412 Precondition Failed
-Date: Tue, 12 Feb 2019 06:03:03 GMT
+HTTP/1.1 200 OK
+Date: Tue, 12 Feb 2019 06:05:18 GMT
 Server: Apache/2.4.18 (Ubuntu)
 X-Powered-By: Unified Networking Lab API
 Cache-Control: post-check=0, pre-check=0
 Pragma: no-cache
-Content-Length: 104
+Content-Length: 73
 Content-Type: application/json
 
 {
-    "code": 412,
-    "message": "User is not authenticated or session timed out (90001).",
-    "status": "unauthorized"
+    "code": 200,
+    "message": "Lab has been created (60019).",
+    "status": "success"
 }
-whoami@ubuntu1$
 
 
 ```

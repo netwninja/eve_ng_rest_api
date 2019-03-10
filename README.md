@@ -32,7 +32,7 @@ Content-Type: application/json
 ---------------
 
 ```
-curljson -i -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"path":"/CCIE","name":"Gasood","version":"1","author":"User1","description":"A new demo lab","body":"Lab usage and guide"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs
+curljson -i -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"path":"/CCIE","name":"test","version":"1","author":"User1","description":"A new demo lab","body":"Lab usage and guide"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs
 HTTP/1.1 200 OK
 Date: Tue, 12 Feb 2019 06:05:18 GMT
 Server: Apache/2.4.18 (Ubuntu)
@@ -54,7 +54,7 @@ Content-Type: application/json
 Now next step is going to create a node inside this LAB. In order to create the nodes we would need the LAB uuid.
 
 ```
-curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl
+curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/test.unl
 HTTP/1.1 200 OK
 Date: Tue, 12 Feb 2019 06:17:16 GMT
 Server: Apache/2.4.18 (Ubuntu)
@@ -70,10 +70,10 @@ Content-Type: application/json
         "author": "User1",
         "body": "Lab usage and guide",
         "description": "A new demo lab",
-        "filename": "Gasood.unl",
+        "filename": "test.unl",
         "id": "5156debe-86c5-480e-9b73-8885008cd2b9",
         "lock": 0,
-        "name": "Gasood",
+        "name": "test",
         "scripttimeout": 600,
         "version": "1"
     },
@@ -93,7 +93,7 @@ once we have the UUID then go ahead and use the curl command mentioned below.  T
 
 
 ```
-curljson -i  -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"type":"iol","template":"iol","config":"Unconfigured","delay":0,"icon":"Router.png","image":"L3-ADVENTERPRISE9-15.4.2T.bin","name":"Test Router1","left":"35%","top":"25%","ram":"256","console":"telnet","cpu":1,"ethernet":2,"uuid":"5156debe-86c5-480e-9b73-8885008cd2b9"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl/nodes
+curljson -i  -s -c /tmp/cookie -b /tmp/cookie -X POST -d '{"type":"iol","template":"iol","config":"Unconfigured","delay":0,"icon":"Router.png","image":"L3-ADVENTERPRISE9-15.4.2T.bin","name":"Test Router1","left":"35%","top":"25%","ram":"256","console":"telnet","cpu":1,"ethernet":2,"uuid":"5156debe-86c5-480e-9b73-8885008cd2b9"}' -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/test.unl/nodes
 HTTP/1.1 201 Created
 Date: Tue, 12 Feb 2019 06:19:46 GMT
 Server: Apache/2.4.18 (Ubuntu)
@@ -120,7 +120,7 @@ Content-Type: application/json
 
 
 ```
-curljson -i  -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl/nodes/start
+curljson -i  -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/test.unl/nodes/start
 HTTP/1.1 200 OK
 Date: Tue, 12 Feb 2019 06:25:50 GMT
 Server: Apache/2.4.18 (Ubuntu)
@@ -143,7 +143,7 @@ whoami@ubuntu1$
 Next step is to get the console access url for the above mentioned node
 
 ```
-curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/Gasood.unl/nodes
+curljson -i -s -c /tmp/cookie -b /tmp/cookie -X GET -H 'Content-type: application/json' http://10.0.0.221/api/labs/CCIE/test.unl/nodes
 HTTP/1.1 200 OK
 Date: Tue, 12 Feb 2019 06:39:03 GMT
 Server: Apache/2.4.18 (Ubuntu)
